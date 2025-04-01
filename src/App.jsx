@@ -3,13 +3,24 @@ import { useState } from "react"
 
 export function App() {
   const [notaAvaliacao, setAvaliacao] = useState(0)
+  const [submited,setSubmited] = useState(false)
 
   function handleMudarNotaAvaliacao(nota) {
     setNotaAvaliacao(nota)
   }
  
+    function handleSubmit() {
+      if (notaAvaliacao !== 0) {
+        setSubmited(true)
+        return
+      }
+
+      alert("Please, choose a note!")
+      }
+
+
   return (
-    notaAvaliacao === 0 ? (
+    submited === false ? (
       <div className="bg-gradient-dark text-white mx-6 p-6 rounded-2xl
     font-overpass">
       <div className="bg-dark-blue w-fit p-4 rounded-full mb-4">
@@ -23,19 +34,19 @@ export function App() {
 
         <div className="flex justify-between mb-6">
           <input type="button" value="1" className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-medium-grey text-sm font-bold" onClick={() =>
+          rounded-full text-medium-grey text-sm font-bold focus:bg-medium-grey focus:text-white" onClick={() =>
           handleMudarNotaAvaliacao(1)}/>
           <input type="button" value="2" className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-medium-grey text-sm font-bold" onClick={() =>
+          rounded-full text-medium-grey text-sm font-bold focus:bg-medium-grey focus:text-white" onClick={() =>
             handleMudarNotaAvaliacao(2)}/>
           <input type="button" value="3" className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-medium-grey text-sm font-bold" onClick={() =>
+          rounded-full text-medium-grey text-sm font-bold focus:bg-medium-grey focus:text-white" onClick={() =>
             handleMudarNotaAvaliacao(3)}/>
           <input type="button" value="4" className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-medium-grey text-sm font-bold" onClick={() =>
+          rounded-full text-medium-grey text-sm font-bold focus:bg-medium-grey focus:text-white" onClick={() =>
             handleMudarNotaAvaliacao(4)}/>
           <input type="button" value="5" className="bg-dark-blue w-10.5 h-10.5
-          rounded-full text-medium-grey text-sm font-bold" onClick={() =>
+          rounded-full text-medium-grey text-sm font-bold focus:bg-medium-grey focus:text-white" onClick={() =>
             handleMudarNotaAvaliacao(5)}/>
         </div>
         
