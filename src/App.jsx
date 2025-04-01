@@ -1,5 +1,6 @@
 import iconStar from "./assets/icon-star.svg"
 import { useState } from "react"
+import illustrationthankyou from "./assets/illustration-thank-you.svg"
 
 export function App() {
   const [notaAvaliacao, setAvaliacao] = useState(0)
@@ -50,14 +51,16 @@ export function App() {
             handleMudarNotaAvaliacao(5)}/>
         </div>
         
-        <button className="bg-orange w-full uppercase tracking-1 font-bold
+        <button onClick={handleSubmit} className="bg-orange w-full uppercase tracking-1 font-bold
         rounded-3xl text-sm py-3">Submit</button>
       </div>
 
     ) : (
        <div className="bg-gradient-dark text-white mx-6 p-6 rounded-2xl
     font-overpass">
-      <p>{notaAvaliacao}</p>
+      <img src={illustrationthankyou} alt="ilustration Thank You" />
+
+      <p>You selected {notaAvaliacao} out of 5</p>
       </div>
     )
   )
